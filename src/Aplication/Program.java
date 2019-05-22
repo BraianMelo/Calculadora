@@ -144,6 +144,11 @@ public class Program extends javax.swing.JFrame {
         });
 
         btnDiv.setText("/");
+        btnDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDivActionPerformed(evt);
+            }
+        });
 
         btnMult.setText("*");
         btnMult.addActionListener(new java.awt.event.ActionListener() {
@@ -257,15 +262,24 @@ public class Program extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelaActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
-        // TODO add your handling code here:
+    if(rdoOn.isSelected() == true){
+        Tela = v.n1(Tela," + ");
+        txtTela.setText(Tela);
+    }
     }//GEN-LAST:event_btnMaisActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
-        // TODO add your handling code here:
+        if(rdoOn.isSelected() == true){
+        Tela = v.n1(Tela," * ");
+        txtTela.setText(Tela);
+    }
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
-        // TODO add your handling code here:
+         if(rdoOn.isSelected() == true){
+        Tela = v.n1(Tela," - ");
+        txtTela.setText(Tela);
+         }
     }//GEN-LAST:event_btnSubActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
@@ -332,6 +346,13 @@ public class Program extends javax.swing.JFrame {
         Tela = "";
         txtTela.setText(Tela);
     }//GEN-LAST:event_rdoOffActionPerformed
+
+    private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
+         if(rdoOn.isSelected() == true){
+        Tela = v.n1(Tela," / ");
+        txtTela.setText(Tela);
+         }
+    }//GEN-LAST:event_btnDivActionPerformed
 
     /**
      * @param args the command line arguments

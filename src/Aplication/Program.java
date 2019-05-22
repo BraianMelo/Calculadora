@@ -60,6 +60,11 @@ public class Program extends javax.swing.JFrame {
 
         buttonGroup1.add(rdoOff);
         rdoOff.setText("Off");
+        rdoOff.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdoOffActionPerformed(evt);
+            }
+        });
 
         btn1.setText("1");
         btn1.addActionListener(new java.awt.event.ActionListener() {
@@ -264,54 +269,69 @@ public class Program extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSubActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-       Tela = v.toString(0,Tela);
-       txtTela.setText(Tela);
+       if(rdoOn.isSelected() == true){
+        Tela = v.toString(0,Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        if(rdoOn.isSelected() == true){
         Tela = v.toString(1,Tela);
-       txtTela.setText(Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+       if(rdoOn.isSelected() == true){
         Tela = v.toString(2,Tela);
-       txtTela.setText(Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        if(rdoOn.isSelected() == true){
         Tela = v.toString(3,Tela);
-       txtTela.setText(Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-       Tela = v.toString(4,Tela);
-       txtTela.setText(Tela);
+       if(rdoOn.isSelected() == true){
+        Tela = v.toString(4,Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-       Tela = v.toString(5,Tela);
-       txtTela.setText(Tela);
+       if(rdoOn.isSelected() == true){
+        Tela = v.toString(5,Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        if(rdoOn.isSelected() == true){
         Tela = v.toString(6,Tela);
-       txtTela.setText(Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        if(rdoOn.isSelected() == true){
         Tela = v.toString(7,Tela);
-       txtTela.setText(Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-       Tela = v.toString(8,Tela);
-       txtTela.setText(Tela);
+       if(rdoOn.isSelected() == true){
+        Tela = v.toString(8,Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+       if(rdoOn.isSelected() == true){
         Tela = v.toString(9,Tela);
-       txtTela.setText(Tela);
+       txtTela.setText(Tela);}
     }//GEN-LAST:event_btn9ActionPerformed
+
+    private void rdoOffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoOffActionPerformed
+        Tela = "";
+        txtTela.setText(Tela);
+    }//GEN-LAST:event_rdoOffActionPerformed
 
     /**
      * @param args the command line arguments

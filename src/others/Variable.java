@@ -9,16 +9,27 @@ public class Variable {
     public int str = 1;
     public String str1= "";
     public String str2 = "";
+    public boolean f = false;
 
     
     
     public String toString(int x,String s){
+    if(f == true){
+        s = "";
+        str1 = "";
+        str2 = "";
+        f = false;
+    }
+    if((str1 != null)&&(str2 != null)){
+        
+    }
         if(str % 2 == 1){
            str1 = s + x;  
         }
         else{
            str2 += x;   
         }
+        System.out.println(str1+"    "+str2);
         return(s + x);
     }
     public String n1(String s,String sig){    
@@ -42,9 +53,17 @@ public class Variable {
     
     public String result(String s){
         s += " = ";
+        n2 = Double.parseDouble(str2);      
+        ++str;
+        f = true;    
+        return conta(s);        
+    }
+    
+    
+    
+    public String conta(String s){
         String ns = "";
-        n2 = Double.parseDouble(str2);
-        switch(sinal){
+         switch(sinal){
             case 1:
                 ns = s+(n1+n2);
             break;
@@ -61,9 +80,7 @@ public class Variable {
                 ns = " 0 ";
             break;
         }
-            
-        return ns;
-                
+         return ns;
     }
     
 }

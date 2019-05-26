@@ -14,14 +14,13 @@ public class Variable {
     
     
     public String toString(int x,String s){
+        System.out.println(n1);
+        System.out.println(n2);
     if(f == true){
         s = "";
         str1 = "";
         str2 = "";
         f = false;
-    }
-    if((str1 != null)&&(str2 != null)){
-        
     }
         if(str % 2 == 1){
            str1 = s + x;  
@@ -29,12 +28,19 @@ public class Variable {
         else{
            str2 += x;   
         }
-        System.out.println(str1+"    "+str2);
         return(s + x);
     }
+    //---------------------------------------------------------------------------
     public String n1(String s,String sig){    
+        if(f == true){
+            str1="";
+            str2 = "";
+            n1 = n1+n2;
+            s = Double.toString(n1);
+            str1 = n1+sig;
+            f = false;
+        }
         n1 =Double.parseDouble(s);
-
         if(sig == " + "){
             sinal = 1;
         }else if(sig == " - "){
@@ -50,31 +56,31 @@ public class Variable {
         ++str;
         return (s+sig);
     }
-    
+ //-----------------------------------------------------------------------------    
     public String result(String s){
         s += " = ";
         n2 = Double.parseDouble(str2);      
         ++str;
         f = true;    
-        return conta(s);        
+        return s+conta(); 
     }
+ //-----------------------------------------------------------------------------   
     
     
-    
-    public String conta(String s){
+    public String conta(){
         String ns = "";
          switch(sinal){
             case 1:
-                ns = s+(n1+n2);
+                ns += n1+n2;
             break;
             case 2: 
-                ns = s+(n1 - n2);
+                ns += (n1 - n2);
             break;           
             case 3:
-                ns = s+(n1/n2);
+                ns += (n1/n2);
             break;
             case 4:
-                ns = s+(n1*n2);
+                ns += n1*n2;
             break;
             default:
                 ns = " 0 ";

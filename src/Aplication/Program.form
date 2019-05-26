@@ -67,7 +67,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnMais" max="32767" attributes="0"/>
-                          <Component id="btnDiv" pref="60" max="32767" attributes="0"/>
+                          <Component id="btnDiv" max="32767" attributes="0"/>
                           <Component id="btnSub" alignment="1" max="32767" attributes="0"/>
                           <Component id="btnMult" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -277,6 +277,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="="/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIgualActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnVirg">
       <Properties>

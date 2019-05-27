@@ -10,6 +10,7 @@ public class Variable {
     public String str1= "";
     public String str2 = "";
     public boolean f = false;
+    public int  ctn = 0;
 
     
     
@@ -19,7 +20,8 @@ public class Variable {
         str1 = "";
         str2 = "";
         f = false;
-    }
+        }
+        
         if(str % 2 == 1){
            str1 = s + x;  
         }
@@ -29,28 +31,27 @@ public class Variable {
         return(s + x);
     }
     //---------------------------------------------------------------------------
-    public String n1(String s,String sig){    
+    public String n1(String s,String sig){ 
+        ++ctn;
+        if(ctn >= 2){
+            str = 1;
+            n2 = Double.parseDouble(str2);     
+            str1 = conta();
+            str2 = "";
+            s = str1;
+            n2 = 0;
+        }
         if(f == true){
             str1="";
             str2 = "";
             n1 = n1+n2;
             s = Double.toString(n1);
             str1 = n1+sig;
+            str++;
             f = false;
         }
         n1 =Double.parseDouble(s);
-        if(sig == " + "){
-            sinal = 1;
-        }else if(sig == " - "){
-            sinal = 2; 
-        }
-        else if(sig == " / "){
-            sinal = 3; 
-        }else if(sig == " * "){
-            sinal = 4;
-        }
-        else{}
-        
+        sinal(sig);
         ++str;
         return (s+sig);
     }
@@ -59,6 +60,7 @@ public class Variable {
         s += " = ";
         n2 = Double.parseDouble(str2);      
         ++str;
+        ctn = 0;
         f = true;    
         return s+conta(); 
     }
@@ -86,6 +88,7 @@ public class Variable {
         }
          return ns;
     }
+    //--------------------------------------------------------------------------
     public String Virg(String s){
          if(str % 2 == 1){
            str1 = s + ".";  
@@ -94,5 +97,20 @@ public class Variable {
            str2 += ".";   
         }
          return(s+".");
+    }
+    //--------------------------------------------------------------------------
+    public void sinal(String sig){
+        if(sig == " + "){
+            sinal = 1;
+        }else if(sig == " - "){
+            sinal = 2; 
+        }
+        else if(sig == " / "){
+            sinal = 3; 
+        }else if(sig == " * "){
+            sinal = 4;
+        }
+        else{}
+        
     }
 }

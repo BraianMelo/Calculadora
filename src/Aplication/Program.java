@@ -172,6 +172,11 @@ public class Program extends javax.swing.JFrame {
         });
 
         btnVirg.setText(",");
+        btnVirg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVirgActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -365,6 +370,13 @@ public class Program extends javax.swing.JFrame {
             txtTela.setText(Tela);
         }
     }//GEN-LAST:event_btnIgualActionPerformed
+
+    private void btnVirgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVirgActionPerformed
+        if(rdoOn.isSelected() == true){
+            Tela = v.Virg(Tela);
+            txtTela.setText(Tela);
+        }
+    }//GEN-LAST:event_btnVirgActionPerformed
 
     /**
      * @param args the command line arguments

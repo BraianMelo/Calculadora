@@ -14,8 +14,6 @@ public class Variable {
     
     
     public String toString(int x,String s){
-        System.out.println(n1);
-        System.out.println(n2);
     if(f == true){
         s = "";
         str1 = "";
@@ -88,5 +86,13 @@ public class Variable {
         }
          return ns;
     }
-    
+    public String Virg(String s){
+         if(str % 2 == 1){
+           str1 = s + ".";  
+        }
+        else{
+           str2 += ".";   
+        }
+         return(s+".");
+    }
 }

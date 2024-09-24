@@ -1,0 +1,2 @@
+# Calculadora
+Esse projeto foi feito em 2019, quando eu tinha apenas 14 anos. É apenas uma calculadora simples no java Swing. Em 2024, alterei o nome dos métodos e das variáveis e coloque no padrão MVC. De resto, o projeto e a lógica continua igual.

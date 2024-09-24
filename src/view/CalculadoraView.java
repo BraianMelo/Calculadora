@@ -1,15 +1,13 @@
 
-package Aplication;
-import others.Variable;
+package view;
+import controller.CalculadoraController;
 
-public class Program extends javax.swing.JFrame {
-    public static String Tela = "";
-    Variable v = new Variable();
+public class CalculadoraView extends javax.swing.JFrame {
+    
+    private static String telaStr = "";
+    private CalculadoraController controller = new CalculadoraController();
 
-    /**
-     * Creates new form Program
-     */
-    public Program() {
+    public CalculadoraView() {
         initComponents();
         rdoOn.doClick();
     }
@@ -43,11 +41,15 @@ public class Program extends javax.swing.JFrame {
         btnMult = new javax.swing.JButton();
         btnSub = new javax.swing.JButton();
         btnIgual = new javax.swing.JButton();
-        btnVirg = new javax.swing.JButton();
+        btnVirgula = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(207, 286));
+        setMinimumSize(new java.awt.Dimension(207, 286));
         setResizable(false);
 
+        txtTela.setEditable(false);
+        txtTela.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtTela.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtTela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,9 +58,11 @@ public class Program extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(rdoOn);
+        rdoOn.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         rdoOn.setText("On");
 
         buttonGroup1.add(rdoOff);
+        rdoOff.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         rdoOff.setText("Off");
         rdoOff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,76 +70,105 @@ public class Program extends javax.swing.JFrame {
             }
         });
 
+        btn1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn1.setText("1");
+        btn1.setMaximumSize(new java.awt.Dimension(35, 40));
+        btn1.setMinimumSize(new java.awt.Dimension(35, 40));
+        btn1.setPreferredSize(new java.awt.Dimension(35, 40));
         btn1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn1ActionPerformed(evt);
             }
         });
 
+        btn2.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn2.setText("2");
+        btn2.setPreferredSize(new java.awt.Dimension(35, 35));
         btn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn2ActionPerformed(evt);
             }
         });
 
+        btn3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn3.setText("3");
+        btn3.setPreferredSize(new java.awt.Dimension(35, 35));
         btn3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn3ActionPerformed(evt);
             }
         });
 
+        btn0.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn0.setText("0");
+        btn0.setMaximumSize(new java.awt.Dimension(40, 35));
+        btn0.setMinimumSize(new java.awt.Dimension(40, 35));
+        btn0.setPreferredSize(new java.awt.Dimension(40, 35));
         btn0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn0ActionPerformed(evt);
             }
         });
 
+        btn9.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn9.setText("9");
+        btn9.setPreferredSize(new java.awt.Dimension(35, 35));
         btn9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn9ActionPerformed(evt);
             }
         });
 
+        btn4.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn4.setText("4");
+        btn4.setMaximumSize(new java.awt.Dimension(35, 40));
+        btn4.setMinimumSize(new java.awt.Dimension(35, 40));
+        btn4.setPreferredSize(new java.awt.Dimension(35, 40));
         btn4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn4ActionPerformed(evt);
             }
         });
 
+        btn7.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn7.setText("7");
+        btn7.setMaximumSize(new java.awt.Dimension(35, 40));
+        btn7.setMinimumSize(new java.awt.Dimension(35, 40));
+        btn7.setPreferredSize(new java.awt.Dimension(35, 40));
         btn7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn7ActionPerformed(evt);
             }
         });
 
+        btn6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn6.setText("6");
+        btn6.setPreferredSize(new java.awt.Dimension(35, 35));
         btn6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn6ActionPerformed(evt);
             }
         });
 
+        btn5.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn5.setText("5");
+        btn5.setPreferredSize(new java.awt.Dimension(35, 35));
         btn5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn5ActionPerformed(evt);
             }
         });
 
+        btn8.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btn8.setText("8");
+        btn8.setPreferredSize(new java.awt.Dimension(35, 35));
         btn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn8ActionPerformed(evt);
             }
         });
 
+        btnMais.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btnMais.setText("+");
         btnMais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,13 +176,17 @@ public class Program extends javax.swing.JFrame {
             }
         });
 
+        btnDiv.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btnDiv.setText("/");
+        btnDiv.setMaximumSize(new java.awt.Dimension(40, 35));
+        btnDiv.setMinimumSize(new java.awt.Dimension(40, 35));
         btnDiv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDivActionPerformed(evt);
             }
         });
 
+        btnMult.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btnMult.setText("*");
         btnMult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,6 +194,7 @@ public class Program extends javax.swing.JFrame {
             }
         });
 
+        btnSub.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         btnSub.setText("-");
         btnSub.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,17 +202,25 @@ public class Program extends javax.swing.JFrame {
             }
         });
 
+        btnIgual.setFont(new java.awt.Font("Times New Roman", 0, 10)); // NOI18N
         btnIgual.setText("=");
+        btnIgual.setMaximumSize(new java.awt.Dimension(40, 35));
+        btnIgual.setMinimumSize(new java.awt.Dimension(40, 35));
+        btnIgual.setPreferredSize(new java.awt.Dimension(40, 35));
         btnIgual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIgualActionPerformed(evt);
             }
         });
 
-        btnVirg.setText(",");
-        btnVirg.addActionListener(new java.awt.event.ActionListener() {
+        btnVirgula.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        btnVirgula.setText(",");
+        btnVirgula.setMaximumSize(new java.awt.Dimension(35, 40));
+        btnVirgula.setMinimumSize(new java.awt.Dimension(35, 40));
+        btnVirgula.setPreferredSize(new java.awt.Dimension(35, 40));
+        btnVirgula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnVirgActionPerformed(evt);
+                btnVirgulaActionPerformed(evt);
             }
         });
 
@@ -187,38 +233,48 @@ public class Program extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(rdoOn)
+                        .addGap(46, 46, 46)
+                        .addComponent(btn8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdoOff))
+                        .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDiv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn4, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                            .addComponent(btnVirg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn5, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnVirgula, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btn9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn0)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnIgual)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btn3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnMais, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnDiv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSub, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnMult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTela, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rdoOn)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rdoOff))
+                            .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtTela, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -234,33 +290,31 @@ public class Program extends javax.swing.JFrame {
                     .addComponent(rdoOff))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn8, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMult, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn8, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btn6, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMult, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMais, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVirg, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSub, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMais, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnIgual, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnVirgula, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         pack();
@@ -272,111 +326,112 @@ public class Program extends javax.swing.JFrame {
     }//GEN-LAST:event_txtTelaActionPerformed
 
     private void btnMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMaisActionPerformed
-    if(rdoOn.isSelected() == true){
-        Tela = v.n1(Tela," + ");
-        txtTela.setText(Tela);
-    }
+        if(rdoOn.isSelected() == true){
+            telaStr = controller.manipularEntradaPrimeiroNumero(telaStr, " + ");
+            txtTela.setText(telaStr);
+        }
     }//GEN-LAST:event_btnMaisActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
         if(rdoOn.isSelected() == true){
-        Tela = v.n1(Tela," * ");
-        txtTela.setText(Tela);
-    }
+            telaStr = controller.manipularEntradaPrimeiroNumero(telaStr, " * ");
+            txtTela.setText(telaStr);
+        }
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
-         if(rdoOn.isSelected() == true){
-        Tela = v.n1(Tela," - ");
-        txtTela.setText(Tela);
-         }
+        if(rdoOn.isSelected() == true){
+            telaStr = controller.manipularEntradaPrimeiroNumero(telaStr, " - ");
+            txtTela.setText(telaStr);
+        }
     }//GEN-LAST:event_btnSubActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-       if(rdoOn.isSelected() == true){
-        Tela = v.toString(0,Tela);
-       txtTela.setText(Tela);}
+        if(rdoOn.isSelected() == true){
+            telaStr = controller.adicionarNumero(0, telaStr);
+            txtTela.setText(telaStr);
+        }
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         if(rdoOn.isSelected() == true){
-        Tela = v.toString(1,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(1,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
        if(rdoOn.isSelected() == true){
-        Tela = v.toString(2,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(2,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
         if(rdoOn.isSelected() == true){
-        Tela = v.toString(3,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(3,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
        if(rdoOn.isSelected() == true){
-        Tela = v.toString(4,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(4,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
        if(rdoOn.isSelected() == true){
-        Tela = v.toString(5,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(5,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
         if(rdoOn.isSelected() == true){
-        Tela = v.toString(6,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(6,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
         if(rdoOn.isSelected() == true){
-        Tela = v.toString(7,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(7,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
        if(rdoOn.isSelected() == true){
-        Tela = v.toString(8,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(8,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
        if(rdoOn.isSelected() == true){
-        Tela = v.toString(9,Tela);
-       txtTela.setText(Tela);}
+        telaStr = controller.adicionarNumero(9,telaStr);
+       txtTela.setText(telaStr);}
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void rdoOffActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdoOffActionPerformed
-        Tela = "";
-        txtTela.setText(Tela);
+        telaStr = "";
+        txtTela.setText(telaStr);
     }//GEN-LAST:event_rdoOffActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
-         if(rdoOn.isSelected() == true){
-        Tela = v.n1(Tela," / ");
-        txtTela.setText(Tela);
-         }
+        if(rdoOn.isSelected() == true){
+            telaStr = controller.manipularEntradaPrimeiroNumero(telaStr, " / ");
+            txtTela.setText(telaStr);
+        }
     }//GEN-LAST:event_btnDivActionPerformed
 
     private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
         if(rdoOn.isSelected() == true){
-            Tela = v.result(Tela);
-            txtTela.setText(Tela);
+            telaStr = controller.exibirResultado(telaStr);
+            txtTela.setText(telaStr);
         }
     }//GEN-LAST:event_btnIgualActionPerformed
 
-    private void btnVirgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVirgActionPerformed
+    private void btnVirgulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVirgulaActionPerformed
         if(rdoOn.isSelected() == true){
-            Tela = v.Virg(Tela);
-            txtTela.setText(Tela);
+            telaStr = controller.adicionarPontoDecimal(telaStr);
+            txtTela.setText(telaStr);
         }
-    }//GEN-LAST:event_btnVirgActionPerformed
+    }//GEN-LAST:event_btnVirgulaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,20 +450,21 @@ public class Program extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Program.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalculadoraView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Program.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalculadoraView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Program.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalculadoraView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Program.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalculadoraView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Program().setVisible(true);
+                new CalculadoraView().setVisible(true);
             }
         });
     }
@@ -429,7 +485,7 @@ public class Program extends javax.swing.JFrame {
     private javax.swing.JButton btnMais;
     private javax.swing.JButton btnMult;
     private javax.swing.JButton btnSub;
-    private javax.swing.JButton btnVirg;
+    private javax.swing.JButton btnVirgula;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JRadioButton rdoOff;
